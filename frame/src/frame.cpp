@@ -8,19 +8,20 @@
 
 #include "europeenOption.h"
 #include "optionTemplate.h"
+#include "utils.h"
+#include "densityFunctions.h"
 #include <iostream>
+
 using namespace std;
+using namespace dens;
+using namespace ut;
 
 
 
 int main(){
 	//calcul du prix dune option européènne de strike K et de maturité T
-	int *p = 0;
-	p = new int;
-	*p = 3;
-	optionTemplate<double> op1(0.5,0.4,0.6,0.2,0.5,"c",p);
-	//op1.set_K(0.5);
-	cout << *(op1.get_p()) << endl;
-	delete p;
-	return 0;
+
+	densityFunctions d1(normalDens,-2,2);
+	cout << d1.density(0,3,1);
+
 }
