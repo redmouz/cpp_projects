@@ -11,6 +11,11 @@
 #include "utils.h"
 #include "densityFunctions.h"
 #include "listOption.h"
+#include <stdlib.h>
+#include <time.h>
+
+// pour créer une pause dans l'exécution du programme
+
 
 
 
@@ -22,16 +27,34 @@ using namespace ut;
 
 int main(){
 	//calcul du prix dune option européènne de strike K et de maturité T
+	cout << "sans initialisation" << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << "avec initialisation NULL" << endl;
+	srand(time(NULL));
 
-	densityFunctions d1(normalDens,-2.0,2.0);
-	densityFunctions d2(normalCdf,-2.0,2.0);
-	cout << d1.density(0,3.0,1.0) << endl;
-	cout << d2.density(2.0,4.0,0) << endl;
-	listOption listOpt1;
-	europeenOption* opt;
-	opt = new europeenOption;
-	listOpt1.ajouter_option(opt);
-	cout << listOpt1.get_length() << endl;
-	delete opt;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+
+	cout << "seed = 1" << endl;
+	srand(1);
+
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+	cout << rand() << endl;
+
+	cout << "encore avec initialisation NULL" << endl;
+	//usleep(10000000000000000000000000000);
+		srand(time(NULL));
+
+		cout << rand() << endl;
+		cout << rand() << endl;
+		cout << rand() << endl;
+		cout << rand() << endl;
 	return 0;
 }
