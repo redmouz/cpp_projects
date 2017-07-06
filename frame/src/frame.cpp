@@ -10,7 +10,9 @@
 #include "optionTemplate.h"
 #include "utils.h"
 #include "densityFunctions.h"
-#include <iostream>
+#include "listOption.h"
+
+
 
 using namespace std;
 using namespace dens;
@@ -25,4 +27,11 @@ int main(){
 	densityFunctions d2(normalCdf,-2.0,2.0);
 	cout << d1.density(0,3.0,1.0) << endl;
 	cout << d2.density(2.0,4.0,0) << endl;
+	listOption listOpt1;
+	europeenOption* opt;
+	opt = new europeenOption;
+	listOpt1.ajouter_option(opt);
+	cout << listOpt1.get_length() << endl;
+	delete opt;
+	return 0;
 }
