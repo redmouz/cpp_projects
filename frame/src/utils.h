@@ -13,9 +13,13 @@
 
 namespace ut {
 
+// Densité
 double normalDens(double mean, double sig, double eval);
 double standNormalDens(double eval);
 
+// Fonctions de répartition
+double 	standNormalCdf(double eval);
+double 	normalCdf(double mean, double sig, double eval);
 
 } /* namespace ut */
 
