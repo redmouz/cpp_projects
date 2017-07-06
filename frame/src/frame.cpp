@@ -14,6 +14,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include "optionParam.h"
+#include "exactEuropeanOption.h"
 // pour créer une pause dans l'exécution du programme
 
 
@@ -22,15 +23,34 @@
 using namespace std;
 using namespace dens;
 using namespace ut;
-
+using namespace opt;
 
 
 int main(){
+	optionParam<> r;
+	r(0);
+	r.name("r");
+	optionParam<> k;
+	k(0);
+	k.name("k");
+	optionParam<> T;
+	T(0);
+	T.name("T");
+	optionParam<> U;
+	U(1);
+	U.name("U");
+	optionParam<> sig;
+	sig(0);
+	sig.name("sig");
+	optionParam<> b;
+	b(0);
+	b.name("b");
+	optionParam<string,string> optType;
+	optType("c");
+	optType.name("optType");
+	exactEuropeanOption opt(r,k,T,U,sig,b,optType);
+	cout << opt.Price() << endl;
 
-	optionParam<string,double> r;
-	r.name(string("coucou"));
-	r(0.5);
-	cout << r() << endl;
-	cout << r.name() << endl;
+
 	return 0;
 }

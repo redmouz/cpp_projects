@@ -13,6 +13,8 @@
 
 using namespace std;
 
+namespace opt{
+
 template <class Name = string, class Type = double> class optionParam {
 public:
 	optionParam(){
@@ -52,9 +54,8 @@ public:
 		else
 			return false;
 	}
-private:
-	Name n;
-	Type t;
+
+
 	optionParam<Name, Type>& operator= (const optionParam<Name, Type>& par){
 		if(this == &par)
 			return *this;
@@ -62,6 +63,18 @@ private:
 		n = par.name();
 		return *this;
 	}
+
+	virtual ~optionParam(){}
+
+private:
+	Name n;
+	Type t;
+
+
+
 };
 
+};
 #endif /* OPTIONPARAM_H_ */
+
+
