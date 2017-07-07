@@ -40,7 +40,7 @@ public:
 		return this->n;
 	}
 
-	list<optionParam<Name,Type> >& lopt() const{
+	list<optionParam<Name,Type> > lopt() const{
 		return this->lparam;
 	}
 
@@ -48,6 +48,18 @@ public:
 
 	void operator() (const Name& nam){
 		this->n = nam;
+	}
+
+	typename list<optionParam<Name,Type> >::iterator Begin()
+	{ // Return iterator at begin of composite
+
+		return lparam.begin();
+	}
+
+	typename list<optionParam<Name,Type> >::iterator End()
+	{ // Return iterator at begin of composite
+
+		return lparam.end();
 	}
 
 	optionParam<Name,Type> value(const Name& nam) const{
@@ -73,7 +85,15 @@ public:
 			add *it;
 		}
 	}
-	void remove(const Name& value);
+	void remove(const Name& value){
+		typename list<optionParam<Name,Type> >::iterator it;
+
+		for(it=lparam.begin();it!=lparam.end();it++){
+			if((*it)() == value){
+				erase(it);
+			}
+		}
+	}
 	// operator =
 
 	optionParam<Name,Type>& operator= (const optionParam<Name,Type>& source){

@@ -21,6 +21,9 @@ public:
 		t = Type();
 		n = Name();
 	}
+	optionParam(const Name& n){
+		this->n = n;
+	}
 	optionParam(const Name& n, const Type& t){
 		this->t = t;
 		this->n = n;

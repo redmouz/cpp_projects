@@ -15,6 +15,8 @@
 #include <time.h>
 #include "optionParam.h"
 #include "exactEuropeanOption.h"
+#include "listOptionParam.h"
+#include <list>
 // pour créer une pause dans l'exécution du programme
 
 
@@ -27,29 +29,24 @@ using namespace opt;
 
 
 int main(){
-	optionParam<> r;
-	r(0);
-	r.name("r");
-	optionParam<> k;
-	k(0);
-	k.name("k");
-	optionParam<> T;
-	T(0);
-	T.name("T");
-	optionParam<> U;
-	U(1);
-	U.name("U");
-	optionParam<> sig;
-	sig(0);
-	sig.name("sig");
-	optionParam<> b;
-	b(0);
-	b.name("b");
-	optionParam<string,string> optType;
-	optType("c");
-	optType.name("optType");
-	exactEuropeanOption opt(r,k,T,U,sig,b,optType);
-	cout << opt.Price() << endl;
+	exactEuropeanOption futureOption;
+	futureOption.U(105.0);
+	futureOption.K(100.0);
+	futureOption.T(0.5);
+	futureOption.r(0.10);
+	futureOption.sig(0.36);
+	futureOption.b(0.0);
+
+	listOptionParam<string,double> l = futureOption.outputs();
+	list<optionParam<string,double> >::iterator it;
+
+	cout << "\nDump the parameters, call prices ... \n";
+	for (it=l.Begin(); it!=l.End(); it++)
+	{
+		cout << (*it).name() << ", " << (*it)() << endl;
+	}
+
+
 
 
 	return 0;

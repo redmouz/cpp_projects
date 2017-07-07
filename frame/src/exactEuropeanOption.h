@@ -9,6 +9,7 @@
 #define EXACTEUROPEANOPTION_H_
 
 #include "optionParam.h"
+#include "listOptionParam.h"
 #include "utils.h"
 using namespace opt;
 using namespace ut;
@@ -22,7 +23,7 @@ public:
 	optionParam<string,double> U; // current price
 	optionParam<string,double> sig; // volatility
 	optionParam<string,double> b;
-	optionParam<string,string> optType; // option type (Call or Put)
+
 
 	exactEuropeanOption(){
 		r = optionParam<>();
@@ -31,19 +32,36 @@ public:
 		U = optionParam<>();
 		sig = optionParam<>();
 		b = optionParam<>();
-		optType = optionParam<string,string>();
+		optType = "Option euro";
+		optName = "c";
+
 	}
+
+	exactEuropeanOption(const string optType, const \
+				string optName){
+
+		r = optionParam<>();
+		K = optionParam<>();
+		T = optionParam<>();
+		U = optionParam<>();
+		sig = optionParam<>();
+		b = optionParam<>();
+		this->optType = optType;
+		this->optName = optName;
+	}
+
 	exactEuropeanOption(const optionParam<string,double>& r, const optionParam<string,double>& K, \
 				const optionParam<string,double>& T, const optionParam<string,double>& U,const \
-				optionParam<string,double>& sig,const optionParam<string,double>& b, const \
-				optionParam<string,string>& type){
+				optionParam<string,double>& sig,const optionParam<string,double>& b, const string\
+				optName, const string optType){
 		this->r = r;
 		this->K = K;
 		this->T = T;
 		this->U = U;
 		this->sig = sig;
 		this->b = b;
-		this->optType = type;
+		this->optType = optType;
+		this->optName = optName;
 	}
 
 	exactEuropeanOption(const exactEuropeanOption& opt){
@@ -53,10 +71,40 @@ public:
 		this->U = opt.U;
 		this->sig = opt.sig;
 		this->b = opt.b;
-		this->optType = opt.optType;
+		this->optType = opt();
+		this->optName = opt.name();
+	}
+
+	string operator() () const{
+		return optType;
+	}
+
+	string name() const{
+		return optName;
 	}
 
 
+	listOptionParam<string,double> parameters() const{
+		listOptionParam<string,double> result;
+
+		result.add(optionParam<string, double>(r.name(),r()));
+		result.add (optionParam<string, double> (sig.name(), sig() ) );
+		result.add (optionParam<string, double> (K.name(), K() ) );
+		result.add (optionParam<string, double> (T.name(), T() ) );
+		result.add (optionParam<string, double> (U.name(), U() ) );
+		result.add (optionParam<string, double> (b.name(), b() ) );
+
+		return result;
+	}
+
+	listOptionParam<string, double> outputs() const{
+
+		listOptionParam<string, double> result;
+
+		result.add (optionParam<string, double> (string("Option Value"), Price()));
+
+		return result;
+	}
 
 	double Price() const{
 		double tmp = sig() * sqrt(T());
@@ -66,6 +114,10 @@ public:
 	}
 
 	~exactEuropeanOption(){}
+
+private:
+	string optName;
+	string optType;
 };
 
 #endif /* EXACTEUROPEANOPTION_H_ */
