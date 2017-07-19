@@ -68,7 +68,8 @@ void jeu::init_jeu(){
 			liste.splice(liste.begin(),l,it);
 			it = l.begin();
 		}
-		jeu::afficher_liste(liste);
+		l.splice(it,liste);
+		nombre = 52;
 	}
 
 

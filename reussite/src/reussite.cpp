@@ -15,6 +15,5 @@ int main() {
 	jeu sim(52);
 	sim.init_jeu();
 	cout << sim.l.size() << endl;
-	sim.afficher_liste();
 	return 0;
 }
