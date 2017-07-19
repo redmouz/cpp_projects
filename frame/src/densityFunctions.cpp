@@ -38,8 +38,11 @@ double densityFunctions::density(double m, double sig, double eval){
 		{
 			throw string("Le point d'évaluation n'appartient pas au domaine de définition");
 			return 0;
-		} else
+		}
+		else
+		{
 			return this->f(m,sig,eval);
+		}
 	}
 	catch(string const& errorMessage)
 	{

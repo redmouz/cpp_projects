@@ -1,0 +1,5 @@
+
+
+<!ELEMENT section (personne)>
+<!ELEMENT personne (nom)>
+<!ELEMENT nom (#PCDATA)>
