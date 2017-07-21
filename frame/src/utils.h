@@ -10,6 +10,9 @@
 #define M_PI 3,141592653
 
 #include <math.h>
+#include <stdlib.h>
+
+
 
 namespace ut {
 
@@ -18,8 +21,15 @@ double normalDens(double mean, double sig, double eval);
 double standNormalDens(double eval);
 
 // Fonctions de répartition
-double 	standNormalCdf(double eval);
-double 	normalCdf(double mean, double sig, double eval);
+double standNormalCdf(double eval);
+double normalCdf(double mean, double sig, double eval);
+
+//generer un nombre aléatoire issu de la loi normale
+
+double normalNumber(double mean, double sig);
+double W_function(double W);
+void Polar_Marsaglia_algo (double&, double&);
+
 
 } /* namespace ut */
 
