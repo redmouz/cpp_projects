@@ -12,6 +12,8 @@ class point {
 public:
 	point();
 	virtual ~point();
+	point(const point&);
+	point(const double&, const int&, const double&);
 
 	int getIndice() const;
 	void setIndice(int indice);
@@ -20,6 +22,7 @@ public:
 	double getValeur() const;
 	void setValeur(double valeur);
 
+	point& operator=(const point&);
 private:
 	double valeur;
 	int indice;

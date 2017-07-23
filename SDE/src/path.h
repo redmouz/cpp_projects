@@ -10,6 +10,8 @@
 
 #include "point.h"
 #include <list>
+#include "modele.h"
+#include <iostream>
 
 using namespace std;
 
@@ -18,17 +20,25 @@ public:
 	path();
 	virtual ~path();
 
-	const list<point*>& getChemin() const;
-	void setChemin(const list<point*>& chemin);
-	static double getPas() const;
-	void setPas(static double pas);
+	path(const point&, const int&, const modele&, const double&);
+
+	const list<point>& getChemin() const;
+	void setChemin(const list<point>& chemin);
 	const point& get0() const;
 	void set0(const point& _0);
+	void afficher() const;
+
+
+	double final_value();
+	void generate_path();
+
 
 private:
 	point S_0;
-	static double pas;
-	list<point*> chemin;
+	int nbr_pas;
+	list<point> chemin;
+	modele mod;
+	double maturity;
 };
 
 #endif /* PATH_H_ */
