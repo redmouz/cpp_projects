@@ -8,11 +8,18 @@
 
 #include <iostream>
 #include "LoiNormale.hpp"
+#include "Array.hpp"
+#include "toile.hpp"
+#include "fonctions.hpp"
+
 using namespace std;
+using namespace array;
 using namespace distribution;
+using namespace fonc;
 
 int main() {
-	LoiNormale lN(3,1);
-	cout << lN.E() << endl; // prints !!!Hello World!!!
+
+	cout << factorielle(171) << endl;
+
 	return 0;
 }

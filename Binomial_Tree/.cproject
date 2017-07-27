@@ -29,7 +29,7 @@
 								<option id="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level.992863595" name="Debug Level" superClass="gnu.cpp.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.cpp.compiler.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.include.paths.520064548" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/static_cpp_tools}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\redam\eclipse-workspace\static_cpp_tools\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\redam\git\cpp_projects\static_cpp_tools\Debug&quot;"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.2018750649" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" useByScannerDiscovery="true" value="gnu.cpp.compiler.dialect.default" valueType="enumerated"/>
 								<option id="gnu.cpp.compiler.option.preprocessor.def.1075338654" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" useByScannerDiscovery="false" valueType="definedSymbols"/>
@@ -40,7 +40,7 @@
 								<option id="gnu.c.compiler.mingw.exe.debug.option.debugging.level.587290382" name="Debug Level" superClass="gnu.c.compiler.mingw.exe.debug.option.debugging.level" useByScannerDiscovery="false" value="gnu.c.debugging.level.max" valueType="enumerated"/>
 								<option id="gnu.c.compiler.option.include.paths.491905668" name="Include paths (-I)" superClass="gnu.c.compiler.option.include.paths" useByScannerDiscovery="false" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/static_cpp_tools}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\redam\eclipse-workspace\static_cpp_tools\Debug&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;C:\Users\redam\git\cpp_projects\static_cpp_tools\Debug&quot;"/>
 								</option>
 								<inputType id="cdt.managedbuild.tool.gnu.c.compiler.input.888507878" superClass="cdt.managedbuild.tool.gnu.c.compiler.input"/>
 							</tool>
@@ -48,7 +48,6 @@
 							<tool id="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug.589409463" name="MinGW C++ Linker" superClass="cdt.managedbuild.tool.gnu.cpp.linker.mingw.exe.debug">
 								<option id="gnu.cpp.link.option.paths.1478401592" name="Library search path (-L)" superClass="gnu.cpp.link.option.paths" useByScannerDiscovery="false" valueType="libPaths">
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/static_cpp_tools/Debug}&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;C:\Users\redam\eclipse-workspace\static_cpp_tools\Debug&quot;"/>
 								</option>
 								<option id="gnu.cpp.link.option.libs.1951649844" name="Libraries (-l)" superClass="gnu.cpp.link.option.libs" useByScannerDiscovery="false" valueType="libs">
 									<listOptionValue builtIn="false" value="static_cpp_tools"/>
