@@ -6,6 +6,7 @@
  */
 
 #include "CRRstrategy.hpp"
+#include <iostream>
 
 namespace binmeth {
 
@@ -13,32 +14,23 @@ CRRstrategy::CRRstrategy() {
 
 }
 
-CRRstrategy::CRRstrategy(const double& _u,const double& _d,const double& _p,const double& _r, \
-			const double& _delta,const double& _vol,const double& _q = 0){
-	up = _u;
-	down = _d;
-	p = _p;
+CRRstrategy::CRRstrategy(const double& _r,const double& _delta,const double& _sigma){
 	r =_r;
 	delta = _delta;
-	vol = _vol;
-	q = _q;
+	sigma = _sigma;
+	q = 0;
 }
 
-CRRstrategy::CRRstrategy(const double& _r,const double& _delta,const double& _vol,\
-		const double& _q = 0){
-	r =_r;
-	delta = _delta;
-	vol = _vol;
-	q = _q;
-}
 
 void CRRstrategy::Strategy() {
-	up = exp(vol*sqrt(delta));
-	down = exp(-vol*sqrt(delta));
-	p =  (exp((r-q)*delta) - down)/(up-down);
+	up = exp((r-0.5*sigma*sigma)*delta + sigma*sqrt(delta));
+	down  = exp((r-0.5*sigma*sigma)*delta - sigma*sqrt(delta));
+	p = 0.5;
 }
+
 
 CRRstrategy::~CRRstrategy() {
 }
+
 
 } /* namespace binmeth */

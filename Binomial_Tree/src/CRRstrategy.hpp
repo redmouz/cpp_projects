@@ -17,12 +17,8 @@ namespace binmeth {
 class CRRstrategy : public BinomialMethodStrategies {
 public:
 	CRRstrategy();
-	CRRstrategy(const double&,const double&,const double&,const double&, \
-			const double&,const double&,const double&);
 	void Strategy();
-
-	CRRstrategy(const double&,const double&,const double&,const double&);
-
+	CRRstrategy(const double&,const double&,const double&);
 	virtual ~CRRstrategy();
 };
 

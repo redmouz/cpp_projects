@@ -15,8 +15,14 @@ namespace binmeth {
 class BinomialMethodStrategies {
 public:
 	BinomialMethodStrategies();
-	virtual void Strategy();
+	double getUp() const;
+	double getDown() const;
+	double getP() const;
+	virtual void Strategy() = 0;
 	virtual ~BinomialMethodStrategies();
+
+
+
 
 protected:
 	double up;
@@ -24,7 +30,7 @@ protected:
 	double p;
 	double r;
 	double delta;
-	double vol;
+	double sigma;
 	double q; //dividende
 
 };

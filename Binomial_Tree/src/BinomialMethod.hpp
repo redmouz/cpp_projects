@@ -8,36 +8,49 @@
 #ifndef BINOMIALMETHOD_HPP_
 #define BINOMIALMETHOD_HPP_
 
-const int CRR = 1;
+const int CRR = 1;	// CRR Method
+const int JRR = 2;	// JRR method
+const int MCRR = 3; //Modified CRR Method
 
 
 
 #include "toile.hpp"
 #include "CRRstrategy.hpp"
-#include <Findata.hpp>
+#include "JRRstrategy.hpp"
+#include "ModifiedCRRstrategy.hpp"
+#include "Findata.hpp"
+#include "fonctions.hpp"
+#include "OptionPayoffs.hpp"
 #include <string.h>
+#include "Option.hpp"
+
 using namespace std;
 using namespace array;
 using namespace dta;
+
 
 namespace binmeth {
 
 class BinomialMethod {
 public:
 
-	BinomialMethod(const int&, const double&, const int&, const double&, int, const Findata&);
+	BinomialMethod(const int&, const int& ,const Option*, int, const Findata&);
 	void update_arbre();
+	vector<double > payoffs();
+	void afficher_arbre() const;
+	double Price();
+	virtual ~BinomialMethod();
+
 
 
 private:
 	toile arbre;
-	BinomialMethodStrategies strategie;
+	BinomialMethodStrategies* strategie;
 	int n_steps;
-	int T; //maturité
-	double S_0;
+	Option* option;
 	Findata donnees;
-	int arbre_type;
-	int type_methode;
+	int arbre_type; // binomial Trinomial
+	int type_methode; // CRR, JRR, Modified CRR
 
 };
 

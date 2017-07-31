@@ -7,19 +7,27 @@
 //============================================================================
 
 #include <iostream>
-#include "LoiNormale.hpp"
-#include "Array.hpp"
-#include "toile.hpp"
-#include "fonctions.hpp"
+#include "BinomialMethod.hpp"
+#include <OptionPayoffs.hpp>
+#include "Asset.hpp"
+#include "Option.hpp"
+#include "EuropeanOption.hpp"
+
 
 using namespace std;
 using namespace array;
-using namespace distribution;
 using namespace fonc;
 
 int main() {
 
-	cout << factorielle(171) << endl;
+	Asset action("bnp",0.3,60);
+	EuropeanOption* op = new EuropeanOption("c",0.25,action,65);
+	Findata data(0.08);
+	BinomialMethod bm(1000,JRR,op,2,data);
+	cout << "prix est : "<< bm.Price() << endl;
+	(*op).print();
+
+	delete op;
 
 	return 0;
 }
