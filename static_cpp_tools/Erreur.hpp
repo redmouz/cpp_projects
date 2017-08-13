@@ -5,8 +5,8 @@
  *      Author: Administrateur
  */
 
-#ifndef ERREUR_H_
-#define ERREUR_H_
+#ifndef ERREUR_HPP_
+#define ERREUR_HPP_
 
 namespace err {
 
@@ -18,4 +18,4 @@ public:
 
 } /* namespace err */
 
-#endif /* ERREUR_H_ */
+#endif /* ERREUR_HPP_ */

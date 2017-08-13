@@ -5,7 +5,7 @@
  *      Author: Administrateur
  */
 
-#include "Erreur.h"
+#include "Erreur.hpp"
 
 namespace err {
 

@@ -53,6 +53,13 @@ public:
 		return *this;
 	}
 
+	const S& get_data() const{
+		return data;
+	}
+
+	int get_Taille() const{
+		return taille;
+	}
 
 	virtual void afficher(){}
 

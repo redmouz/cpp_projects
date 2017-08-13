@@ -11,7 +11,7 @@ namespace distribution {
 
 LoiNormale::LoiNormale() : DistributionsContinues(){
 	mean = 0;
-	sigma = 0;
+	sigma = 1;
 }
 
 LoiNormale::LoiNormale(const double& m, const double& s) : DistributionsContinues(){
@@ -23,7 +23,7 @@ double LoiNormale::getMean() const {
 	return mean;
 }
 
-void LoiNormale::setMean(double mean) {
+void LoiNormale::setMean(const double& mean) {
 	this->mean = mean;
 }
 
@@ -31,7 +31,7 @@ double LoiNormale::getSigma() const {
 	return sigma;
 }
 
-void LoiNormale::setSigma(double sigma) {
+void LoiNormale::setSigma(const double& sigma) {
 	this->sigma = sigma;
 }
 

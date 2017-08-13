@@ -14,18 +14,22 @@ class Findata {
 public:
 
 	Findata();
-	Findata(double, double);
-	Findata(double, double, double);
+	Findata(const double&);
+	Findata(const double&, const double&);
+	Findata(const double&, const double&,const double&, const double&);
+	double getVol() const;
+	void setVol(const double&);
 	double getCoc() const;
-	void setCoc(double coc);
+	void setCoc(const double&);
 	double getInflation() const;
-	void setInflation(double inflation);
+	void setInflation(const double&);
 	double getR() const;
-	void setR(double r);
+	void setR(const double&);
 	virtual ~Findata();
 
 private:
 	double r; //interest rate
+	double vol_market; // volatility
 	double coc; //cost of carry
 	double inflation;
 };

@@ -29,7 +29,7 @@ public:
 
 
 
-	void afficher(){
+	void afficher() const{
 		for(int i=0; i<taille;i++){
 			cout << "[" << i+1 << "]:";
 			for(unsigned int j = 0; j< data[i].size(); j++){
@@ -43,11 +43,11 @@ public:
 		data[0][0] = r;
 	}
 
-	double operator()(unsigned int& i,unsigned int& j) const{
+	double operator()(int i,int  j) const{
 		return data[i][j];
 	}
 
-	double& operator()(unsigned int& i, unsigned int& j){
+	double& operator()(int i, int j){
 		return data[i][j];
 	}
 

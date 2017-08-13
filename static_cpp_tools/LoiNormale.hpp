@@ -18,9 +18,9 @@ public:
 	LoiNormale(const double&,const double&);
 	virtual ~LoiNormale();
 	double getMean() const;
-	void setMean(double);
+	void setMean(const double&);
 	double getSigma() const;
-	void setSigma(double);
+	void setSigma(const double&);
 	double E() const;
 	double V() const;
 	double cdf(const double&) const;
